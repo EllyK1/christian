@@ -35,6 +35,12 @@ jobs:
         yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
         $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
+    - name: Verify AIDL presence
+      run: |
+        export ANDROID_HOME=$HOME/android-sdk
+        ls $ANDROID_HOME/build-tools/33.0.2 || true
+        which aidl || true
+
     - name: Install Python dependencies
       run: |
         pip install --upgrade pip
