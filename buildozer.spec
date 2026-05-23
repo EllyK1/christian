@@ -16,10 +16,13 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,json
 
 # (str) Application versioning
-version = 1.0
+version.name = 1.0
+version.code = 1
 
 # (list) Application requirements
-requirements = python3,kivy,numpy,sounddevice,pyrebase,pillow,fpdf
+# ⚠️ Note: pyrebase, sounddevice, and fpdf may not have recipes in python-for-android.
+# You may need to vendor them or replace with supported libraries.
+requirements = python3,kivy,numpy,pillow
 
 # (str) Presplash of the application
 presplash.filename = presplash.png
@@ -57,3 +60,7 @@ log_level = 2
 
 # (int) Display warning if buildozer is run as root
 warn_on_root = 1
+
+# (str) SDK/NDK paths (optional, Buildozer usually manages these automatically)
+# android.sdk_path = $HOME/.buildozer/android/platform/android-sdk
+# android.ndk_path = $HOME/.buildozer/android/platform/android-ndk
